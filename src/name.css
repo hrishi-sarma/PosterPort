@@ -56,7 +56,7 @@ body, html {
 
 .left-cards {
     left: 0;
-    transform: translate(-105%, -100%);
+    transform: translate(-105%, -50%);
 }
 
 .right-cards {
@@ -101,7 +101,7 @@ body, html {
 
 .cardS{
     width: 325px;
-    height: 400px;
+    height: 500px;
     background-color: #4CAF50;
     color: white;
     display: flex;
