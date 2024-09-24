@@ -6,7 +6,8 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f0f0;
+    background: url('./assets/bg7.jpeg') no-repeat center center;
+    background-size: cover; /* Make sure the image covers the entire viewport */
     font-family: Arial, sans-serif;
 }
 
@@ -23,7 +24,7 @@ body, html {
     position: relative;
     width: 1000px;
     height: 900px;
-    background-color: #fff;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for the display */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1;
     display: flex;
@@ -31,19 +32,12 @@ body, html {
     align-items: center;
     font-size: 24px;
     font-weight: bold;
-    color: #333;
+    color: #fff;
+    border-radius: 60px;
+    overflow: hidden; /* Hide overflowing content */
 }
 
-.left-cards {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    z-index: 0;
-}
-
+.left-cards,
 .right-cards {
     position: absolute;
     top: 50%;
@@ -64,23 +58,14 @@ body, html {
     transform: translate(105%, -50%);
 }
 
-.card{
-    width: 260px;
-    height: 100px;
-    background-color: #4CAF50;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: transform 0.5s, opacity 0.5s;
-    opacity: 0;
+.card, .cardS {
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    background: rgba(0, 0, 0, 0.329); /* Transparent background to enhance glass effect */
 }
 
-.cardP{
-    width: 325px;
-    height: 200px;
-    background-color: #4CAF50;
+.card {
+    width: 260px;
+    height: 100px;
     color: white;
     display: flex;
     justify-content: center;
@@ -88,29 +73,89 @@ body, html {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: transform 0.5s, opacity 0.5s;
     opacity: 0;
+    border-radius: 30px;
+}
+
+.cardP {
+    width: 325px;
+    height: auto;
+    color: white;
+    display: flex;
+    align-items: center;
+   
+    transition: transform 0.5s, opacity 0.5s;
+    opacity: 0;
+    border-radius: 30px;
+    padding: 15px;
+    box-sizing: border-box;
+    flex-direction: row;
 }
 
 .cardP img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-left: -40px;
-  margin-right: 20px;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
 }
 
-.cardS{
+.cardP .text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cardP h1 {
+    font-size: 30px;
+    margin: 0;
+}
+
+.cardP p {
+    margin: 5px 0 0 0;
+}
+
+.cardS {
     width: 325px;
     height: 500px;
-    background-color: #4CAF50;
     color: white;
-    display: flex;
+    display:table-column;
     justify-content: center;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: transform 0.5s, opacity 0.5s;
     opacity: 0;
+    border-radius: 30px;
 }
+
+.AboutMe {
+    width: 100%;
+
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 40px;
+}
+.education {
+    width: 100%;
+
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 40px;
+}
+
+.education h1 {
+    font-size: 32px;
+}
+
+.education ul {
+    text-align: justify;
+    margin-left: 40px;
+    margin-right: 60px;
+}
+
+
+
 
 .main-container:hover .left-cards .card,
 .main-container:hover .left-cards .cardP,
