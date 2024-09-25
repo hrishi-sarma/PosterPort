@@ -2,7 +2,7 @@ import React from 'react';
 import './name.css'; // Import the CSS file
 import profile from './assets/buddy.jpeg';
 import bgVideo from './assets/bg.mp4'; // Import the video file
-
+import Experience from './experience';
 
 const App = () => {
   return (
@@ -10,8 +10,8 @@ const App = () => {
 
       <div className="main-container">
         <div className="main-display">
-          
-          Main Display
+          <Experience/>
+         
         </div>
         <div className="left-cards">
           <div className="cardP">
