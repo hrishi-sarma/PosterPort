@@ -1,17 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Name from './name'
+import { useState, useEffect } from 'react';
+import './App.css';
+import Name from './name';
+import LoadingScreen from './LoadingScreen';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [loading, setLoading] = useState(true); // Add loading state
+
+  useEffect(() => {
+    // Simulate a loading delay, remove or adjust as necessary
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // 2 seconds for demonstration
+
+    return () => clearTimeout(timer); // Cleanup timer on component unmount
+  }, []);
 
   return (
     <>
-     <Name/>
+      {loading ? <LoadingScreen /> : <Name />}
     </>
-  )
+  );
 }
 
-export default App
+export default App;

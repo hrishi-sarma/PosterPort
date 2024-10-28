@@ -1,3 +1,12 @@
+@keyframes moveBackground {
+    0% {
+        background-position: center top;
+    }
+    100% {
+        background-position: center bottom;
+    }
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -6,9 +15,10 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('./assets/bg7.jpeg') no-repeat center center;
-    background-size: cover; /* Make sure the image covers the entire viewport */
+    background: url('./assets/bg9.png') no-repeat center center;
+    background-size: 100% 400%; /* Adjusted to cover the height for seamless animation */
     font-family: Arial, sans-serif;
+    animation: moveBackground 20s linear infinite; /* Animation here */
 }
 
 .main-container {
@@ -23,7 +33,7 @@ body, html {
 .main-display {
     position: relative;
     width: 1000px;
-    height: 900px;
+    height: 800px;
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for the display */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1;
@@ -74,7 +84,21 @@ body, html {
     transition: transform 0.5s, opacity 0.5s;
     opacity: 0;
     border-radius: 30px;
+    margin-top: 60px;
+    flex-direction: column;
+    font-family: 'Courier New', Courier, monospace;
 }
+
+.card h1 {
+    font-size: 2.2rem;
+}
+
+.card ul{
+    margin-top: -1.3vh;
+}
+
+
+
 
 .cardP {
     width: 325px;
@@ -118,7 +142,7 @@ body, html {
     width: 325px;
     height: 500px;
     color: white;
-    display:table-column;
+    display: table-column;
     justify-content: center;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -129,15 +153,14 @@ body, html {
 
 .AboutMe {
     width: 100%;
-
     font-size: 16px;
     line-height: 1.6;
     font-family: 'Courier New', Courier, monospace;
     margin-top: 40px;
 }
+
 .education {
     width: 100%;
-
     font-size: 16px;
     line-height: 1.6;
     font-family: 'Courier New', Courier, monospace;
@@ -154,12 +177,10 @@ body, html {
     margin-right: 60px;
 }
 
-
-
-
 .main-container:hover .left-cards .card,
 .main-container:hover .left-cards .cardP,
 .main-container:hover .left-cards .cardS,
+.main-container:hover .right-cards .cardLink,
 .main-container:hover .right-cards .card {
     transform: translateX(0);
     opacity: 1;
@@ -169,6 +190,46 @@ body, html {
     transform: translateX(100%);
 }
 
-.right-cards .card {
+.cardLink, .right-cards .card {
     transform: translateX(-100%);
 }
+
+.cardLink {
+    width: 325px;
+    height: auto;
+    color: white;
+    transition: transform 0.5s, opacity 0.5s;
+    opacity: 0;
+    border-radius: 30px;
+    padding: 15px;
+    box-sizing: border-box;
+
+    gap: 50px;
+}
+.cardLink a{
+    padding: 1.5vh;
+    margin-top: 4vh;
+}
+
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Adjust spacing between icons */
+    margin-top: 20px; /* Space above the icons */
+}
+
+.social-icons img {
+    width: 40px; /* Adjust size of the icons */
+    height: 40px;
+    cursor: pointer; /* Change cursor on hover */
+    transition: transform 0.3s; /* Animation for hover effect */
+}
+
+.social-icons img:hover {
+    transform: scale(1.1); /* Slightly increase size on hover */
+}
+
+
+

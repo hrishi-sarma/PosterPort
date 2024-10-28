@@ -1,41 +1,39 @@
-// Experience.jsx
 import React from 'react';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
+import Spline from '@splinetool/react-spline';
 import './experience.css'; // Import the CSS file
 
-const Experience = () => {
+const SplineModel = () => {
+  const cardData = [
+    { id: 1, imgSrc: '/edlg.png', link: 'https://vercel.com/api/toolbar/link/educrow.vercel.app?via=project-dashboard-alias-list&p=1&page=/' },
+    { id: 2, imgSrc: '/browsit.png', link: 'https://vercel.com/api/toolbar/link/browsit.vercel.app?via=project-dashboard-alias-list&p=1&page=/' },
+    { id: 3, imgSrc: '/cjva.png', link: 'https://github.com/hrishi-sarma/AI-voice-assist' }
+  ];
+
   return (
-    <div className="exp">
-      {/* Canvas is the 3D scene container */}
-      <Canvas camera={{ position: [5, 5, 5], fov: 50 }}>
-        {/* Add ambient lighting and orbit controls */}
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} />
+    <div className='exp' style={{ width: '100%', height: '100vh', position: 'relative' }}>
+      {/* Spline Model */}
+      <div className="title">
+        Projects
+      </div>
+      <div className="container">
 
-        {/* Ground plane */}
-        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1, 0]}>
-          <planeGeometry args={[10, 10]} />
-          <meshStandardMaterial color="green" />
-        </mesh>
-
-        {/* Cube */}
-        <mesh position={[-2, 1, 0]}>
-          <boxGeometry args={[1, 1, 1]} />
-          <meshStandardMaterial color="orange" />
-        </mesh>
-
-        {/* Sphere */}
-        <mesh position={[2, 1, 0]}>
-          <sphereGeometry args={[0.75, 32, 32]} />
-          <meshStandardMaterial color="blue" />
-        </mesh>
-
-        {/* Orbit controls allow camera rotation */}
-        <OrbitControls />
-      </Canvas>
+        <Spline scene="https://prod.spline.design/dv6NJUeC5C66TWfD/scene.splinecode" />
+        <div className="projtitle"></div>
+        <div className="projs">
+          {cardData.map((card) => (
+            <a key={card.id} href={card.link} className="cardproj">
+              <img src={card.imgSrc} alt={`Card ${card.id}`} className="cardproj-image" />
+            </a>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
 
-export default Experience;
+window.onload = function() {
+  var shadowRoot = document.querySelector('spline-viewer').shadowRoot;
+  shadowRoot.querySelector('#logo').remove();
+};
+
+export default SplineModel;
