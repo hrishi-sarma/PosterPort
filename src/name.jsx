@@ -12,30 +12,27 @@ const App = () => {
           <Experience />
         </div>
         <div className="left-cards">
-          <div className="cardP">
-            <img src={profile} alt="image" />
-            <div className="text-content">
-              <h1>Hrishikesh</h1>
-            </div>
-          </div>
+          
           <div className="cardS">
-            <div className="AboutMe">
-              <p>Hi, I'm a FrontEnd dev!</p>
-            </div>
             <div className="education">
-              <h1>Education:</h1>
-              <ul>
-                <li>10+2 from SPS GHY</li>
-                <li>BTECH CSE 2023-27 from SRMIST</li>
-              </ul>
-
-              <h1>Skills:</h1>
-              <ul>
-                <li>React JS, three js</li>
-                <li>Python</li>
-                <li>C, C++</li>
-                <li>Java</li>
-              </ul>
+              <h1>Changelogs:</h1>
+              
+              <div className='xennalayout'>
+                <ul>
+                
+                  <p className='command'>
+                    Pre-Alpha v0.1
+                  </p>
+                  <p className='desc'>
+                
+                      <li>First public release version</li>
+                      <li>Both Audio and Textual outputs</li>
+                      <li>Provide factual information on most topics</li>
+              
+                  </p>
+                </ul>
+                
+              </div>
             </div>
           </div>
         </div>
@@ -43,17 +40,66 @@ const App = () => {
         <div className="right-cards">
           <div className="card">
 
-            <h1>Other:</h1>
-              <ul>
-                <li>Blender</li>
-                <li>UE, Unity, Godot</li>
-                <li>PS, Premiere Pro</li>
-              </ul>
+            <h1>About:</h1>
+            <div className='xennaLayout'>
+              <p className='desc'>
+                Hi I'm Xenna, an AI voice assistant
+              </p>
+              <p className='command'>
+                Installation:
+              </p>
+              <p className='desc'>
+                Download the zip folder and extract the exe file. Then run Xenna.exe
+              </p>
+
+              <p className='command'>
+                Usage Instructions: 
+              </p>
+              <p className='desc'>
+                <ul>
+                  <li>Press the mic icon and give any kind of voice input to start.</li>
+                  <li>This application is made for dark mode users, so kindly turn on dark mode for this app.</li>
+                  <li>The app might not recognise your command if there's too much noise or if the audio is unclear.</li>
+                  <li>Close the app only when the voice output stops, otherwise it'll keep running in the background even after app termination.</li>
+                  <li>In case the previous scenario happened already, you can close it via task manager.</li>
+                </ul>
+              </p>
+
+              <p className='command'>
+                Platforms:
+              </p>
+              <p className='desc'>
+                Windows 
+              </p>
+              
+              <p className='command'>
+                Features:
+              </p>
+              <p className='desc'>
+                <ul>
+                  <li>Converse with the user</li>
+                  <li>Provide factual knowledge on most topics</li>
+                  <li>Generate texts based on prompt</li>
+                </ul>
+              </p>
+              
+              <p className='command'>
+                Dev Notes:
+              </p>
+              <p className='desc'>
+                <p>Please note that Xenna is in pre-Alpha stage right now, which means it is far from perfect. Current drawbacks: </p> 
+
+                <ul>
+                  <li>Speech Recognition system is weak so audio input needs to be very clear.</li>
+                  <li>Can't access any real-time information as of now.</li>
+                  <li>Only available on Windows.</li>
+                </ul>
+              </p>
+
+
+            </div>
           </div>
-          <div className="card">
-            3 of my latest projects are being showcased, follow my socials for more!
-            
-          </div>
+          
           <div className="cardLink">
             {/* Right Card 3 with Social Media Icons */}
             <div className="social-icons">

@@ -7,11 +7,21 @@
   }
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
 }
+
 .exp {
   width: 100%;
   height: 100%;
@@ -19,63 +29,79 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  backdrop-filter: blur(1px);
 
-  /* Dark mode colors and gradient */
-  background: #000000; /* Fallback for browsers that don't support gradients */
-  background: linear-gradient(
-    135deg,
-    #000000 25%,
-    #000000 25%,
-    #000000 50%,
-    #000000 50%,
-    #ffffff 75%,
-    #000000 75%,
-    #1a1a1a
-  );
   background-size: 7px 7px;
-
-  /* Animation */
   animation: move 4s linear infinite;
 }
 
 .container {
-
   height: 100%;
 }
 
-.title{
+.title {
   margin-bottom: -6vh;
   margin-top: 26vh;
   font-family: 'Courier New', Courier, monospace;
-  font-size: 3rem;
+  font-size: 4rem;
+  color:
 }
+
 .projs {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  position: absolute; /* Position the cards absolutely within the parent div */
-  top: 70%; /* Adjust the top position as needed */
+  position: absolute;
+  top: 70%;
   left: 50%;
-  transform: translateX(-50%); /* Center the cards horizontally */
-  gap: 140px; /* Space between the cards */
+  transform: translateX(-50%);
+  gap: 140px;
 }
 
 .cardproj {
-  width: 140px; /* Set width for the card */
-  height: 140px; /* Set height for the card */
-  border-radius: 50%; /* Make the card round */
-  overflow: hidden; /* Ensure the image stays within the round shape */
-  transition: transform 0.3s ease; /* Smooth transition for the hover effect */
-  cursor: pointer; /* Show pointer cursor on hover */
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
 }
 
 .cardproj:hover {
-  transform: translateY(-10px); /* Translate the card upwards on hover */
+  transform: translateY(-10px);
 }
 
 .cardproj-image {
-  width: 100%; /* Ensure the image covers the card */
-  height: 100%; /* Ensure the image covers the card */
-  object-fit: cover; /* Cover the card without stretching the image */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* From Uiverse.io by adamgiebl */ 
+button.custom-button {
+  background: #ff8c00;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 0.6em 1.3em;
+  font-weight: 900;
+  font-size: 18px;
+  border: 3px solid rgb(255, 115, 0);
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+  cursor: pointer;
+  color: white; /* Ensure the text is visible with the default orange background */
+}
+
+button.custom-button:hover {
+
+  border: 3px solid #000000; /* Keep the border orange */
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+}
+
+button.custom-button:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
 }

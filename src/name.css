@@ -16,9 +16,9 @@ body, html {
     justify-content: center;
     align-items: center;
     background: url('./assets/bg9.png') no-repeat center center;
-    background-size: 100% 400%; /* Adjusted to cover the height for seamless animation */
+    background-size: 100% 400%; 
     font-family: Arial, sans-serif;
-    animation: moveBackground 20s linear infinite; /* Animation here */
+    animation: moveBackground 20s linear infinite; 
 }
 
 .main-container {
@@ -34,7 +34,7 @@ body, html {
     position: relative;
     width: 1000px;
     height: 800px;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for the display */
+    background-color: rgba(0, 0, 0, 0.5); 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1;
     display: flex;
@@ -44,7 +44,7 @@ body, html {
     font-weight: bold;
     color: #fff;
     border-radius: 60px;
-    overflow: hidden; /* Hide overflowing content */
+    overflow: hidden; 
 }
 
 .left-cards,
@@ -66,11 +66,12 @@ body, html {
 .right-cards {
     right: 0;
     transform: translate(105%, -50%);
+    margin-top: 6vh;
 }
 
 .card, .cardS {
-    backdrop-filter: blur(10px); /* Apply blur effect */
-    background: rgba(0, 0, 0, 0.329); /* Transparent background to enhance glass effect */
+  
+    background: rgba(0, 0, 0, 0); 
 }
 
 .card {
@@ -203,7 +204,7 @@ body, html {
     border-radius: 30px;
     padding: 15px;
     box-sizing: border-box;
-
+    margin-top: 7vh;
     gap: 50px;
 }
 .cardLink a{
@@ -216,20 +217,77 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px; /* Adjust spacing between icons */
-    margin-top: 20px; /* Space above the icons */
+    gap: 10px; 
+    margin-top: 20px; 
 }
 
 .social-icons img {
-    width: 40px; /* Adjust size of the icons */
+    width: 40px;
     height: 40px;
-    cursor: pointer; /* Change cursor on hover */
-    transition: transform 0.3s; /* Animation for hover effect */
+    cursor: pointer;
+    transition: transform 0.3s; 
 }
 
 .social-icons img:hover {
-    transform: scale(1.1); /* Slightly increase size on hover */
+    transform: scale(1.1); /* Slight zoom effect on hover */
+    filter: brightness(0) saturate(100%) invert(40%) sepia(100%) saturate(900%) hue-rotate(20deg) brightness(140%) contrast(100%); /* Slightly brighter orange */
 }
 
 
+.xennaLayout {
+    background-color: black;
+    border-radius: 2vh;
+    padding: 2vh;
+    border-width: 3vh;
+    border-color: #fff;
+    min-height: 300px; /* Ensures a reasonable minimum height */
+    max-height: 1000px; /* Caps the height */
+    height: auto; /* Allows it to adjust naturally */
+    overflow-y: auto; /* Makes it scrollable when content exceeds the max-height */
+    box-sizing: border-box; /* Ensures padding doesn't affect height */
+    display: block; /* Prevents interference from flex layout */
+    scrollbar-width: thin; /* Optional for modern browsers */
+    scrollbar-color: orange black; /* Optional for styling */
+}
 
+/* Optional: Customize scrollbars for WebKit browsers (Chrome, Edge, Safari) */
+.xennaLayout::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+.xennaLayout::-webkit-scrollbar-thumb {
+    background-color: orange; /* Color of the scrollbar thumb */
+    border-radius: 4px; /* Round scrollbar edges */
+}
+
+.xennaLayout::-webkit-scrollbar-track {
+    background-color: black; /* Background color of the scrollbar track */
+}
+.desc {
+    text-align: left;
+    
+}
+
+.command {
+    text-align: left;
+    text-decoration: solid;
+    -webkit-text-stroke-width: 1px;
+    color: orange;
+}
+
+
+.xennalayout {
+    background-color: black;
+    border-radius: 2vh;
+    padding: 2vh;
+    border-width: 3vh;
+    border-color: #fff;
+    min-height: 300px; /* Ensures a reasonable minimum height */
+    max-height: 400px; /* Caps the height */
+    height: auto; /* Allows it to adjust naturally */
+    overflow-y: auto; /* Makes it scrollable when content exceeds the max-height */
+    box-sizing: border-box; /* Ensures padding doesn't affect height */
+    display: block; /* Prevents interference from flex layout */
+    scrollbar-width: thin; /* Optional for modern browsers */
+    scrollbar-color: orange black; /* Optional for styling */
+}
